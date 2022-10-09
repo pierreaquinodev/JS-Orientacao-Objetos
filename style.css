@@ -1,0 +1,33 @@
+* {
+    margin: 0;
+}
+body {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    background-color: whitesmoke;
+}
+header {
+    background-color: blueviolet;
+    padding: 10px;
+    color: white;
+    text-align: center;
+}
+main {
+    padding: 30px 50px;
+}
+.card {
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin-top: 15px;
+    border-radius: 10px;
+}
+.lineInput {
+    display: grid;
+    margin-bottom: 10px;
+    text-align: center;
+}
+input {
+    padding: 5px;
+    border: 1px solid #ccc;
+}
