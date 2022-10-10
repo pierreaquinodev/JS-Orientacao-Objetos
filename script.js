@@ -9,12 +9,11 @@ class Produto {
         let produto = this.lerDados();
 
         if (this.validaCampos(produto)) {
-            if(this.editId == null){
+            if (this.editId == null) {
                 this.adicionar(produto);
-            }else{
+            } else {
                 this.atualizar(this.editId, produto);
             }
-
         }
         this.listaTabela();
         this.cancelar();
@@ -38,9 +37,12 @@ class Produto {
 
             let imgEdit = document.createElement("img");
             imgEdit.src = "assets/imgs/edit.png";
-            imgEdit.setAttribute("onclick", "produto.preparaEdicao("+ JSON.stringify(this.arrayDeProdutos[i]) +")");
-
-
+            imgEdit.setAttribute(
+                "onclick",
+                "produto.preparaEdicao(" +
+                    JSON.stringify(this.arrayDeProdutos[i]) +
+                    ")"
+            );
 
             let imgDelete = document.createElement("img");
             imgDelete.src = "assets/imgs/delete.png";
@@ -55,13 +57,14 @@ class Produto {
     }
 
     adicionar(produto) {
+        produto.valorProduto = parseFloat(produto.valorProduto);
         this.arrayDeProdutos.push(produto);
         this.id++;
     }
 
-    atualizar(id, produto){
-        for(let i = 0; i < this.arrayDeProdutos.length; i++){
-            if(this.arrayDeProdutos[i].id == id){
+    atualizar(id, produto) {
+        for (let i = 0; i < this.arrayDeProdutos.length; i++) {
+            if (this.arrayDeProdutos[i].id == id) {
                 this.arrayDeProdutos[i].nomeProduto = produto.nomeProduto;
                 this.arrayDeProdutos[i].valorProduto = produto.valorProduto;
                 this.listaTabela();
@@ -69,13 +72,11 @@ class Produto {
         }
     }
 
-
     preparaEdicao(dados) {
-
         this.editId = dados.id;
 
-        document.getElementById('produto').value = dados.nomeProduto;
-        document.getElementById('valor').value = dados.valorProduto;
+        document.getElementById("produto").value = dados.nomeProduto;
+        document.getElementById("valor").value = dados.valorProduto;
     }
 
     lerDados() {
