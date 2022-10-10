@@ -47,7 +47,7 @@ button:hover {
     background-color: white;
     color: blueviolet;
     border: 2px solid blueviolet;
-    transition: 1s;
+    transition: 0.5s;
 }
 .content {
     margin-top: 15px;
@@ -60,4 +60,8 @@ table {
 }
 table th {
     background-color: rgb(222, 187, 255);
+    padding: 5px;
+}
+table td img {
+    width: 22px;
 }

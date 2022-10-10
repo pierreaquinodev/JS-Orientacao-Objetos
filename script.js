@@ -1,18 +1,67 @@
 class Produto {
     constructor() {
-        this.id = 0;
-        this.nomeProd = "";
-        this.valor = 0;
+        this.id = 1;
+        this.arrayDeProdutos = [];
     }
 
-    adicionar() {
-        alert("Produto adicionado com sucesso!");
-        //Regra de negocio
+    salvar() {
+        let produto = this.lerDados();
+
+        if (this.validaCampos(produto)) {
+            this.adicionar(produto);
+        }
+        this.listaTabela();
     }
-    excluir() {
-        alert("Produto excluido com sucesso!");
-        //Regra de negocio
+
+    listaTabela() {
+        let tbody = document.getElementById("tbody");
+        tbody.innerText = "";
+        //Listando Array dinamicamente
+        for (let i = 0; i < this.arrayDeProdutos.length; i++) {
+            let tr = tbody.insertRow();
+
+            let td_id = tr.insertCell();
+            let td_produto = tr.insertCell();
+            let td_valor = tr.insertCell();
+            let td_acoes = tr.insertCell();
+
+            td_id.innerText = this.arrayDeProdutos[i].id;
+            td_produto.innerText = this.arrayDeProdutos[i].nomeProduto;
+            td_valor.innerText = this.arrayDeProdutos[i].valorProduto;
+
+        }
     }
+
+    adicionar(produto) {
+        this.arrayDeProdutos.push(produto);
+        this.id++;
+    }
+
+    lerDados() {
+        let produto = {};
+
+        produto.id = this.id;
+        produto.nomeProduto = document.getElementById("produto").value;
+        produto.valorProduto = document.getElementById("valor").value;
+
+        return produto;
+    }
+    validaCampos(produto) {
+        let msg = "";
+        if (produto.nomeProduto == "") {
+            msg += "O campo nome deve ser preenchido. \n";
+        }
+        if (produto.valorProduto == "") {
+            msg += "O campo valor deve ser preenchido. \n";
+        }
+        if (msg != "") {
+            alert(msg);
+            return false;
+        }
+        return true;
+    }
+
+    cancelar() {}
 }
 
-let produto = new Produto();
+var produto = new Produto();

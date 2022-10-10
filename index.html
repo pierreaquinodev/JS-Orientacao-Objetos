@@ -25,34 +25,31 @@
             </div>
 
             <div class="card">
+
                 <div class="lineInput">
                     <label>Produto</label>
-                    <input type="text" id="produto" />
+                    <input type="text" id="produto">
                 </div>
                 <div class="lineInput">
                     <label>Valor</label>
-                    <input type="text" id="valor" />
+                    <input type="text" id="valor">
                 </div>
-                <button type="button" onclick="produto.adicionar()">
-                    Adicionar
-                <button type="button" onclick="produto.excluir()">
-                    Excluir
-                </button>
+
+                <button onclick="produto.salvar()">Salvar </button>
+                <button onclick="produto.cancelar()">Cancelar </button>
+
             </div>
+
             <div class="content">
                 <table border="1">
                     <thead>
-                        <th>ID</th>
-                        <th>Nome</th>
+                        <th>Id</th>
+                        <th>Produto</th>
                         <th>Valor</th>
                         <th>Ações</th>
                     </thead>
-                    <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>Notebook</td>
-                            <td>3950</td>
-                        </tr>
+                    <tbody id="tbody">
+
                     </tbody>
                 </table>
             </div>
