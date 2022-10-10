@@ -64,4 +64,6 @@ table th {
 }
 table td img {
     width: 22px;
+    margin: 3px 5px 0px 5px;
+
 }

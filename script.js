@@ -28,6 +28,15 @@ class Produto {
             td_id.innerText = this.arrayDeProdutos[i].id;
             td_produto.innerText = this.arrayDeProdutos[i].nomeProduto;
             td_valor.innerText = this.arrayDeProdutos[i].valorProduto;
+            
+            let imgEdit = document.createElement('img');
+            imgEdit.src = 'assets/imgs/edit.png';
+            td_acoes.appendChild(imgEdit);
+
+            let imgDelete = document.createElement('img');
+            imgDelete.src = 'assets/imgs/delete.png';
+            td_acoes.appendChild(imgDelete);
+
 
         }
     }
